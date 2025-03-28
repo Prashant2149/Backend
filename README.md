@@ -51,14 +51,14 @@ backend/
 ## 📌 Installation
 Clone the repository and install dependencies:
 ```sh
-git clone https://github.com/your-username/backend.git
+git clone https://github.com/Prashant2149/Backend
 cd backend
 npm install
 ```
 
 ### ⚙️ Link the Shared ORM Library
 ```sh
-npm install ../shared-orm-library
+npm  git+https://github.com/Prashant2149/shared-ORM-library.git
 ```
 
 ## ⚙️ Environment Variables (.env)
