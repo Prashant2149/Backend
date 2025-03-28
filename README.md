@@ -21,38 +21,65 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# Backend Service (NestJS)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This is the **backend API** for the My-Account project, built with **NestJS** and **PostgreSQL** using the shared ORM library.
 
-## Project setup
+## 📌 Prerequisites
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [PostgreSQL](https://www.postgresql.org/) (v14+ recommended)
+- [Shared ORM Library](https://github.com/your-username/shared-orm-library)
 
-```bash
-$ npm install
+## 📂 Folder Structure
+```
+backend/
+│── src/
+│   ├── modules/
+│   │   ├── users/
+│   │   │   ├── users.controller.ts
+│   │   │   ├── users.service.ts
+│   │   │   ├── users.module.ts
+│   ├── app.module.ts
+│   ├── main.ts
+│── package.json
+│── tsconfig.json
+│── .env
+│── README.md
 ```
 
-## Compile and run the project
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+## 📌 Installation
+Clone the repository and install dependencies:
+```sh
+git clone https://github.com/your-username/backend.git
+cd backend
+npm install
 ```
 
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+### ⚙️ Link the Shared ORM Library
+```sh
+npm install ../shared-orm-library
 ```
+
+## ⚙️ Environment Variables (.env)
+Create a `.env` file in the root directory:
+```ini
+PORT=3000
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+DB_NAME=My-account
+```
+
+## 🚀 Running the Server
+```sh
+npm run start:dev
+```
+
+## 📡 API Endpoints
+- **GET /users** → Fetch all users
+
+## 📜 License
+This project is licensed under [MIT](LICENSE).
+
