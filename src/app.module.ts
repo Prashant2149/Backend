@@ -1,22 +1,16 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from 'shared-orm-library';
+import { AppDataSource, User, Settings } from 'shared-orm-library';
 import { UserService } from './user.service';
 import { UserController } from './user.controller';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: process.env.DB_HOST || 'localhost',
-      port: Number(process.env.DB_PORT) || 5432,
-      username: process.env.DB_USER || '',
-      password: process.env.DB_PASSWORD || '',
-      database: process.env.DB_NAME || '',
-      entities: [User],
-      synchronize: true,
+      ...AppDataSource.options, // Use shared database configuration
+      synchronize: false, // Use migrations instead of auto-sync
     }),
-    TypeOrmModule.forFeature([User]),
+    TypeOrmModule.forFeature([User, Settings]), // Use shared entities
   ],
   controllers: [UserController],
   providers: [UserService],
